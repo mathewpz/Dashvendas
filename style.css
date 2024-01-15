@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.cabecalho, aside .container_logo, aside .container_links ul li, td:first-child {
+  display: flex;
+  align-items: center;
+}
+
+aside .container_links ul li .imagem_dashboard, aside .container_links ul li .imagem_lista {
+  width: 32px;
+  height: 32px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +26,7 @@ body {
 }
 
 .cabecalho {
-  display: flex;
   justify-content: flex-end;
-  align-items: center;
   padding: 10px;
   gap: 20px;
 }
@@ -26,25 +34,30 @@ body {
 aside {
   padding: 10px;
   background-color: #404040;
-}
-aside .container_logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 89px;
+}
+aside h1 {
+  font-family: "Orelega One", serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 aside .container_links ul li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 20px;
+  border-radius: 18px;
+  padding: 5px;
+}
+aside .container_links ul li:first-of-type {
+  background-color: rgba(217, 217, 217, 0.5);
 }
 aside .container_links ul li .imagem_dashboard {
-  width: 32px;
-  height: 32px;
   background-image: url("./img/bxs_dashboard.png");
   display: inline-block;
 }
 aside .container_links ul li .imagem_lista {
-  width: 32px;
-  height: 32px;
   background-image: url("./img/lista.png");
   display: inline-block;
 }
@@ -102,8 +115,6 @@ td {
   border-top: 1px solid rgba(108, 117, 125, 0.5);
 }
 td:first-child {
-  display: flex;
-  align-items: center;
   gap: 10px;
 }
 
@@ -115,6 +126,8 @@ button {
   border-radius: 999px;
   background: #0984E3;
   padding: 15px;
+  border: none;
+  cursor: pointer;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -139,7 +152,7 @@ button {
   text-align: center;
   padding: 10px;
   border-radius: 18px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
   list-style-type: none;
   width: 20%;
 }
@@ -152,11 +165,9 @@ button {
 .informacoes ul li:nth-child(3) {
   background: #27187E;
 }
-
 .informacoes ul li p:first-of-type {
   font-size: 32px;
 }
-
 .informacoes ul li p:last-child {
   font-size: 14px;
   font-weight: 400;
